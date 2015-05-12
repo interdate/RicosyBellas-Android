@@ -1,0 +1,628 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    
+    <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Ricos y Bellas</title>
+    	 
+ 	
+ 	<!-- <link rel="stylesheet" href="js/jquery.mobile-1.3.1/jquery.mobile-1.3.1.min.css" />  -->
+ 	<link rel="stylesheet" href="js/rtl/rtl.jquery.mobile-1.3.0.min.css" />
+ 	<link rel="stylesheet" href="js/jquery.mobile-1.3.1/richdate-theme.min.css" /> 	
+	<link rel="stylesheet" href="css/index.css" />    
+	
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	
+	<!-- <script src="js/jquery.mobile-1.3.1/jquery.mobile-1.3.1.min.js"></script>-->
+	<script src="js/rtl/rtl.jquery.mobile-1.3.0.min.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<!-- <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>	-->
+	<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+		
+	<!-- Add fancyBox -->
+	<link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.3" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/fancybox/source/jquery.fancybox.pack.js?v=2.1.3"></script>	
+</head>
+ 
+<body onLoad="initFastButtons();">
+	<input type="hidden" id="back_page" value="main_page" />
+	<div data-role="page" class="page" id="mainContainer">
+		<!--Start Header-->
+			
+		<div id="header">
+			<div id="logo" onclick="app.chooseMainPage();"></div>
+			<div class="new_mes" onclick="app.getMessenger();"><div class="text_mes">Bandeja de Entrada</div><div class="new_mes_count2"></div></div>									
+			<div id="top_right_buttons">
+				<div id="logout" onclick="app.logout();"></div>
+				<div id="sign_up" onclick="app.register();"></div>
+			</div>
+			<div id="top_left_buttons">					
+				<div id="contact" onclick="app.contact();"></div>
+				<div id="back" onclick="app.back();"></div>
+			</div>
+		</div>			
+		<!--Stop Header-->
+		
+
+		<!--Start Login Page -->
+		<div id="login_page" class="appPage">
+			<div data-role="content" class="bg_white">
+				<div class="content_wrap"> 			
+					<div id="authForm" name="authForm" data-role="none">
+						<!-- mar_top_8 -->
+						<!-- <div id="user_txt" class="mar_top_8">אימייל או </br>כינוי באנגלית</div> -->
+						<div id="user_input"><input placeholder="Correo/Usuario" type="text" name="email" class="email" value="" data-role="none" maxlength="50" /></div>
+						<div class="clear"></div>
+						<!-- <div id="pass_txt" class="lineHeight_50">סיסמה</div> -->
+						<div id="pass_input"><input placeholder="Contraseña" type="password" name="password" class="password" value="" maxlength="50" data-role="none" /></div>
+						<div class="clear"></div>
+						<!-- <label><input type="checkbox" name="remember_me" value="remember_me"  /> <span>remember me</span> </label>  -->
+						<!-- <div id="fog_pass"><a href="#" rel="external" data-ajax="false">I've forgot my password</a></div>  -->
+						<div id="login" onclick="app.sendAuthData();"></div>
+						<a href="#" onclick="app.recovery();" title="title" id="forgot">Olvidé mi Clave</a>
+						<!--<div class="left mar_l_10"><input type="button" value="כניסה" onclick="app.sendAuthData();" data-theme="a"></div>-->
+						<div class="clear"></div>
+					</div>								
+				</div>				
+			</div>	
+			<!-- <div id="grey_line"></div>		
+			<div data-role="content" data-scroll="false" class="bg_user_pre">
+				<div class="content_wrap">				
+					<div class="user_data_preview" id="udp_0">						
+						<div class="user_photo_wrap">
+							<img src="#" alt="" class="user_photo" />						
+						</div> 
+						<a href="#"><span></span></a>
+						<div class="address"></div>
+						<div class="on">ON</div>					
+					</div>
+					<div class="user_data_preview" id="udp_1">						
+						<div class="user_photo_wrap">
+							<img src="#" alt="" class="user_photo" />						
+						</div> 
+						<a href="#"><span></span></a>
+						<div class="address"></div>
+						<div class="on">ON</div>					
+					</div>
+				</div>
+			</div>	 -->		
+		</div>
+		<!--End Login Page -->
+		
+		
+		<!-- Start Recovery Page -->
+		<div id="recovery_page" class="appPage">
+			<div data-role="content" data-scroll="false">
+				<div class="content_wrap">
+					<h1>Envienme mi Clave</h1>
+					<div class="dots"></div>
+            		<div data-role="none" id="form_recovery">
+                		<input type="hidden" name="page" data-role="none" value="recovery" />
+                		<!--<label for="email">Correo Electrónico</label>-->
+               		 	<div id="user_input"><input id="user" class="inpi" placeholder="Correo Electrónico" type="text" name="email" data-role="none" /></div>
+                		<div class="clear" data-role="none"></div>
+                		<button class="form_button" data-role="none" onclick="app.sendRecovery();">Enviar</button>
+                		<div class="clear"></div> 
+            		</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Recovery Page -->
+		
+		
+		<!--Start Main Page -->
+		<div id="main_page"  class="appPage">
+			<div data-role="content" data-scroll="false">
+				<div class="content_wrap">
+					<a href="#" class="mainBut" onclick="app.getOnlineNow();"><div id="friends_online"></div></a>
+					<a href="#" class="mainBut" onclick="app.getSearchForm();"><div id="search_friends"></div></a>
+					<a href="#" class="mainBut" onclick="app.getMyProfileData();"><div id="profile"></div></a>   
+					<a href="#" class="mainBut" onclick="app.getMessenger();" class="no_dec">
+						<div id="mail_box"><div id="new_mes_count"></div></div>
+					</a>
+					<div class="clear"></div>				
+					<a href="#" id="bannerLink"><div id="why_subscr"><button data-role="none">Para subscribirse presiona aquí</button></div></a>					
+				</div>					
+			</div>		
+		</div>
+		<!--End Main Page -->
+		
+		
+		<!--Start Users List Page -->
+		<div id="users_list_page"  class="appPage">
+			<div data-role="content" data-scroll="false">
+				<div class="sortButton" id="sortByDistance">
+					<div class="bg_button" onclick="app.sortByDistance();">
+						<img class="left" src="images/bg_button_l.png" />
+						<div class="left but_c">Quién junto a mí</div>
+						<img class="left" src="images/bg_button_r.png" />
+					</div>
+					<!-- <input type="button" onclick="app.sortByDistance();" value="מי קרוב אלי" data-theme="a"> -->
+				</div>
+				<div class="sortButton" id="sortByEntranceTime">
+					<div class="bg_button" onclick="app.sortByEntranceTime();">
+						<img class="left" src="images/bg_button_l.png" />
+						<div class="left but_c">Resultados anteriores</div>
+						<img class="left" src="images/bg_button_r.png" />
+					</div>
+					<!-- <input type="button" onclick="app.sortByEntranceTime();" value="לתוצאות הקודמות" data-theme="a"> -->
+				</div>
+				<div class="content_wrap"></div>					
+			</div>
+		</div>
+		<!--End Users List Page -->		
+		
+		
+		<!--Start My Profile Page -->
+		<div id="my_profile_page" class="appPage">					
+			<div class="myProfileWrap">
+				<div data-role="content" data-scroll="false" class="myProf">
+					<h1>Mi perfil</h1>
+					<div class="dots"></div>				
+					<div id="my_info_wrap">
+						<div id="my_info">
+							<div class="special4"></div>
+							<div class="user_pic left">
+								<img alt="" src="" />										
+							</div>
+							<div class="txt">					
+								<strong><span></span></strong><br />
+								<span></span><br />						
+							</div>
+						</div>
+					</div>
+					<div id="my_buttons">
+						<br />						
+						<div id="get_stat_div"><button data-theme="a" id="get_stat">Estadística</button></div>	
+						<div id="upload_image_div"><button data-theme="a" id="upload_image">Añadir fotos</button></div>											
+					</div>
+				</div>
+			<!-- <div class="grey_line2"></div> -->
+				<div data-role="content" data-scroll="false" id="statistics">
+					<div class="stat_side">
+						<div class="items_wrap">
+							<div class="stat_title top0" onclick="if($(this).next().text()!='0')app.getStatUsers('addedMeToFriends');">Me añadieron a<br/>sus favoritos<!-- Added You To Friends --></div>
+							<div class="stat_value" onclick="if($(this).text()!='0')app.getStatUsers('addedMeToFriends');">154</div>
+						</div>
+						<div class="items_wrap">
+							<div class="stat_title" onclick="if($(this).next().text()!='0')app.getStatUsers('contactedMe');"><!-- Contacted You -->Me contactaron</div>
+							<div class="stat_value" onclick="if($(this).text()!='0')app.getStatUsers('contactedMe');">229</div>
+						</div>
+						<div class="items_wrap">
+							<div class="stat_title" onclick="if($(this).next().text()!='0')app.getStatUsers('lookedMe');"><!-- Viewed Your Profile -->Vieron mi perfil</div>
+							<div class="stat_value" onclick="if($(this).text()!='0')app.getStatUsers('lookedMe');">2</div>
+						</div>
+					</div>
+					<div class="stat_side">
+						<div class="items_wrap">
+							<div class="stat_title top0" onclick="if($(this).next().text()!='0')app.getStatUsers('friends');">Añadí a mis <br/>favoritos<!-- Added To Friends --></div>
+							<div class="stat_value" onclick="if($(this).text()!='0')app.getStatUsers('friends');">55</div>
+						</div>
+						<div class="items_wrap">
+							<div class="stat_title" onclick="if($(this).next().text()!='0')app.getStatUsers('blackList');"><!-- Added To Black List -->Lista negra</div>
+							<div class="stat_value" onclick="if($(this).text()!='0')app.getStatUsers('blackList');">118</div>
+						</div>
+						<div class="items_wrap">
+							<div class="stat_title" onclick="if($(this).next().text()!='0')app.getStatUsers('contactedThem');"><!-- Contacted -->Los contacté</div> 
+							<div class="stat_value" onclick="if($(this).text()!='0')app.getStatUsers('contactedThem');">3</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="uploadDiv">
+					<div data-role="content" data-scroll="false">
+						<button class="take_a_photo" data-theme="a" onclick="app.capturePhoto(app.pictureSource.CAMERA, app.destinationType.FILE_URI);">Encienda la cámara</button>
+						
+						<button class="choose_from_library" data-theme="a" onclick="app.capturePhoto(app.pictureSource.PHOTOLIBRARY, app.destinationType.FILE_URI);">Galería de fotos</button>
+						
+						<button class="my_images" data-theme="a" onclick="app.displayUserImages();">Mis Fotos</button>
+						<!-- 
+						<div class="up_buttons take_a_photo" onclick="app.capturePhoto(app.pictureSource.CAMERA, app.destinationType.FILE_URI);"></div>
+						<div class="up_buttons choose_from_library" onclick="app.capturePhoto(app.pictureSource.PHOTOLIBRARY, app.destinationType.FILE_URI);"></div>
+						<div class="up_buttons my_images" onclick="app.displayUserImages();"></div>
+						-->						
+						<!-- <img src="images/welcome.jpg" alt="" id="myNewPhoto" />  -->
+						<!-- <script>
+							$(document).ready(
+								function(){			
+									$('#myNewPhoto').Jcrop({
+										onChange: showPreview,
+										onSelect: showPreview,
+										aspectRatio: 1
+									});   	
+								}
+							);
+							function showPreview(coords)
+							{
+								var rx = 100 / coords.w;
+								var ry = 100 / coords.h;
+								$('#preview').css({
+									width: Math.round(rx * 500) + 'px',
+									height: Math.round(ry * 370) + 'px',
+									marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+									marginTop: '-' + Math.round(ry * coords.y) + 'px'
+								});
+							}
+						</script>-->
+					</div>
+				</div>
+			</div>
+		</div> 
+		<!--End My Profile Page -->
+		
+		
+		<!--Start Search From Page -->
+		<div id="search_form_page"  class="appPage">
+			<div data-role="content" data-scroll="false">
+				<div class="content_wrap">
+					<h1>Buscar Socios</h1>
+					<div class="dots"></div>
+					<form action="" method="post" id="searchForm" name="searchForm">
+						<!-- <div id="country_wrap">
+							<div class="sf_txt">País de Residencia:</div>				
+							<div class="sf_sel_wrap countryList"></div>							
+						</div> -->	    			
+						<div class="regTxt mar_top_8" id="country_wrap">País de Residencia:</div>				
+						<div class="regInput countryList"></div>					
+						<div class="clear"></div>
+						<div class="regTxt lineHeight_50" id="regions_wrap">Area:</div>				
+						<div class="regInput regionsList"><sp>Seleccione un país</sp></div>					
+						<div class="clear"></div>
+						<div class="regTxt lineHeight_50" id="city_wrap">Ciudad:</div>			
+						<div class="regInput citiesList"><sp>Seleccione una area</sp></div>
+						<div class="regInput cityInp"><input type="text" name="cityName" id="userCityName" maxlength="50" data-role="none" /></div>					
+						<div class="clear"></div> 
+							
+						<div class="sf_txt" id="birth_wrap">Edad:</div>				
+						<div class="sf_sel_wrap">
+							<div class="sf_sel_wrap2 age_2"></div>					
+							<div class="sf_txt2">a</div>
+							<div class="sf_sel_wrap2 age_1"></div> 
+							<div class="sf_txt2" style="text-align:left;">de</div>
+						</div>
+						<!-- <div class="sf_txt">העדפה:</div>									
+						<div class="sf_sel_wrap sexPreferenceList">
+							<fieldset data-role="controlgroup"></fieldset>	
+						</div>	 -->
+						<div class="sf_txt mar_top_13">Sexo:</div>									
+						<div class="sf_sel_wrap gen">
+							<fieldset data-role="controlgroup" data-type="horizontal">
+								<input type="radio" name="gen" id="radioM" value="1" checked="checked">
+								<label for="radioM">Hombre</label>
+								<input type="radio" name="gen" id="radioF" value="0">
+								<label for="radioF">Mujer</label>
+							</fieldset>
+						 	<!-- <select name="gen" data-role="slider">
+	                            <option value="1">Hombre</option>
+	                            <option value="0">Mujer</option>
+	                        </select> --> 			
+						</div>
+						<div class="sf_txt mar_top_13">Apodo:</div>				
+						<div class="sf_sel_wrap">
+							<input type="text" class="nickName" value="" />
+						</div>
+						<div id="right_buttons">										
+							<input type="button" data-theme="a" value="Búsqueda" onclick="app.search();">
+						</div>
+					</form>
+				</div>					
+			</div>
+		</div>
+		<!--End Search From Page -->
+		
+		
+		
+		<!--Start Profile Page -->
+		<div id="user_profile_page"  class="appPage">
+			<div data-role="content">
+				<div class="content_wrap">
+					<h1>Perfil completo <span></span></h1>
+					<div class="dots"></div>
+					<div id="user_profile">
+						<div id="user_pictures">
+							<div class="pic_wrap" style="z-index:555;"><!-- class="<?if(empty($this->vars['pic_2']) and empty($this->vars['pic_3']) ):?>pic_wrap_center<?else:?>pic_wrap<?endif;?>" -->
+								<a href="#" class="fancybox" rel="images">
+									<img src="" alt="" id="pic1" />
+								</a>
+								<div class="gal_top_icons">				
+									<div class="special3 right"></div>
+									<div class="blue_star right"></div>						
+								</div>
+								<div class="on5"></div>
+								<div class="distance_value"><span></span></div>
+							</div>
+							<div class="pic_wrap">
+								<a href="#" class="fancybox" rel=""><img src="" id="pic2" /></a>
+							</div>
+							<div class="pic_wrap">
+								<a href="#" class="fancybox" rel=""><img src="" id="pic3" /></a>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div id="user_details"></div>
+					</div>
+				</div>					
+			</div>		
+		</div>
+		<!--End Profile Page -->					
+					
+			
+		<!--Start Messenger Page -->
+		<div id="messenger_page"  class="appPage"> 
+			<div data-role="content">
+				<div class="content_wrap">
+					<h1>Bandeja de Entrada</h1>
+					<div class="dots"></div>
+					<div class="chats_wrap"></div>			
+				</div>					
+			</div>		
+		</div>
+		<!--End Messenger Page -->		
+		
+		
+		<!--Start Chat Page -->
+		<div id="chat_page"  class="appPage"> 
+			<div data-role="content">
+				<div class="content_wrap">
+					<h1>Conversación con <span></span></h1>
+					<div class="dots"></div>
+					<div class="sendMessDiv">
+						<div class="sendMessButDiv"><button class="sendMes" data-theme="a" onclick="app.sendMessage();">Envíe</button></div>
+						<div class="messField"><textarea id="message"></textarea></div>
+					</div>
+					<div class="clear"></div>
+					<div class="chat_wrap"></div>			
+				</div>					
+			</div>		
+		</div>
+		<!--End Chat Page -->
+			
+		
+		<!--Start Delete Images Page -->
+		<div id="delete_images_page"  class="appPage"> 
+			<div data-role="content">
+				<div class="content_wrap">
+					<h1>Mis Imágenes</h1>
+					<div class="dots"></div>
+					<div class="imagesButtonsWrap">	
+						<button class="take_a_photo" data-theme="a" onclick="app.capturePhoto(app.pictureSource.CAMERA, app.destinationType.FILE_URI);">Encienda la cámara</button>
+						<button class="choose_from_library" data-theme="a" onclick="app.capturePhoto(app.pictureSource.PHOTOLIBRARY, app.destinationType.FILE_URI);">Galería de fotos</button>
+						<!-- 
+						<div class="up_buttons take_a_photo" onclick="app.capturePhoto(app.pictureSource.CAMERA, app.destinationType.FILE_URI);"></div>
+						<div class="up_buttons choose_from_library" onclick="app.capturePhoto(app.pictureSource.PHOTOLIBRARY, app.destinationType.FILE_URI);"></div>
+						-->
+						<div class="dots"></div>						
+					</div>
+					<div class="imagesListWrap"></div>
+				</div>					
+			</div>		
+		</div>
+		<!--End Delete Images Page -->
+		
+		
+		<!--Start Upload Image Page -->
+		<div id="upload_image_page"  class="appPage"> 
+			<div data-role="content">
+				<div class="content_wrap">
+					<h1>Subir una foto</h1>
+					<div class="dots"></div>
+					<div class="regInfo"></div>					
+					<button class="take_a_photo" data-theme="a" onclick="app.capturePhoto(app.pictureSource.CAMERA, app.destinationType.FILE_URI);">Encienda la cámara</button>
+					<button class="choose_from_library" data-theme="a" onclick="app.capturePhoto(app.pictureSource.PHOTOLIBRARY, app.destinationType.FILE_URI);">Galería de fotos</button>
+					<button class="my_images" data-theme="a" onclick="app.displayUserImages();">Mis Fotos</button>
+					<button class="continue" data-theme="a" onclick="app.chooseMainPage();">Continuación</button>					
+				</div>					
+			</div> 	
+		</div>
+		<!--End Upload Image Page -->		
+		
+		
+		<!--Start Register Page -->
+		<div id="register_page"  class="appPage"> 
+			<div data-role="content">
+				<div class="content_wrap">
+					<h1>Registro</h1>
+					<div class="dots"></div>
+					<div class="regFormWrap">
+						<form id="regForm" data-role="none" onsubmit="return false;">
+							<div class="regTxt lineHeight_50">Usuario</div><div class="regInput"><input type="text" name="userNick" data-role="none" maxlength="50" /></div>
+							<div class="clear"></div>
+							<div class="regTxt lineHeight_50">Clave</div><div class="regInput"><input type="password" name="userPass" id="userPass" maxlength="50" data-role="none" /></div>
+							<div class="clear"></div>
+							<div class="regTxt mar_top_8">Clave de nuevo</div><div class="regInput"><input type="password" name="userPass2" id="userPass2" maxlength="50" data-role="none" /></div>
+							<div class="clear"></div>
+							<div class="regTxt mar_top_8">Correo Electrónico</div><div class="regInput"><input type="text" name="userEmail" id="userEmail" data-role="none" maxlength="50" /></div>
+							<div class="clear"></div>
+							<div class="regTxt lineHeight_50">Sexo</div>
+							<div class="regInput">
+								<fieldset data-role="controlgroup" data-type="horizontal">
+								    <input type="radio" name="userGender" id="radio-male" value="1" checked="checked">
+								    <label for="radio-male">Hombre</label>
+								    <input type="radio" name="userGender" id="radio-female" value="0">
+								    <label for="radio-female">Mujer</label>
+								</fieldset>
+							</div>
+							<div class="clear"></div>
+							
+							<div class="regTxt mar_top_8" id="country_wrap">País de Residencia</div>				
+							<div class="regInput countryList"></div>					
+							<div class="clear"></div>
+							<div class="regTxt lineHeight_50" id="regions_wrap">Area</div>				
+							<div class="regInput regionsList"><sp>Seleccione un país</sp></div>					
+							<div class="clear"></div>
+							<div class="regTxt lineHeight_50" id="city_wrap">Ciudad</div>				
+							<div class="regInput citiesList"><sp>Seleccione una area</sp></div>
+							<div class="regInput cityInp"><input type="text" name="cityName" id="userCityName" maxlength="50" data-role="none" /></div>					
+							<div class="clear"></div> 
+							
+							
+							<div class="regTxt bold mar_top_8" id="birth_wrap">Fecha de Nacimiento</div>						
+							<div class="regInput">
+								<div id="birthDate" class="left"></div>
+							</div>
+							<div class="clear"></div>
+							<!-- <div class="regTxt mar_top_8">Sexual Preference</div>
+							<div class="regInput">
+								<select name="sexPrefId" class="sex_preference_list"></select>
+							</div>
+							<div class="clear"></div>
+							<div class="regTxt lineHeight_50">Country</div>
+							<div class="regInput">						
+								<select name="countryCode" id="countries_list">
+									<option value="">Choose Country</option>													
+								</select>
+							</div>
+							<div class="clear"></div> -->
+							<!-- <div class="regTxt lineHeight_50" id="regions_wrap">איזור</div>				
+							<div class="regInput regionsList"></div>					
+							<div class="clear"></div> 
+							<div class="regTxt lineHeight_50" id="cities_wrap">עיר</div>				
+							<div class="regInput"><input type="text" name="userCity" id="userCity" maxlength="50" data-role="none" /></div>											
+							<div class="clear"></div>-->
+							<div class="regTxt mar_top_8" id="cities_wrap">Número de telefóno</div>				
+							<div class="regInput"><input type="text" name="userPhone" id="userPhone" maxlength="50" data-role="none" /></div>											
+							<div class="clear"></div>
+							<!-- <div class="regTxt lineHeight_50">Zip Code</div><div class="regInput"><input type="text" name="zipCode" data-role="none" maxlength="50" /></div>
+							<div class="clear"></div>
+							<div class="regTxt mar_top_8">Country of Origin</div>
+							<div class="regInput">						
+								<select name="countryOfOriginCode" id="countries_list2">
+									<option value="">Choose Country</option>													
+								</select>
+							</div>
+							<div class="clear"></div>
+							<br />
+							<br />
+							<div class="bold">I confirm that I have read and agreed to the Terms and Conditions of Service of membership at Dating4disabled.com.</div>
+							<div class="clear"></div>
+							<div data-role="fieldcontain">
+								<select name="confirm" id="confirm" data-role="slider" data-theme="c" data-track-theme="c">
+								<option value="0">לא</option>
+								<option value="1">כן</option>
+								</select>
+							</div>
+							<br /> -->
+							<!-- <label><input type="checkbox" name="remember_me" value="remember_me"  /> <span>remember me</span> </label>  -->
+						</form>
+						<button data-theme="a" onclick="app.sendRegData();">Continuar</button>  
+						<br /><br />
+						<br /><br />
+						<br /><br />
+					</div>
+				</div>					
+			</div>		
+		</div>
+		<!--End Register Page -->
+	
+	</div>
+	
+	<div class="appTemplates">
+	
+		<!-- START User Data Template -->	 
+			<div id="userDataTemplate">	
+				<div class="user_data">					
+					<div class="user_photo_wrap">							
+						<div class="user_pic" style="background: url([IMAGE]) no-repeat;"></div>
+					</div>
+					<div class="user_short_txt">
+						<strong>[USERNICK], <span>[AGE]</span></strong><br />						
+						<span> [CITY]</span><br />					
+						[ABOUT]							
+					</div>				
+					<div class="send_mes" onclick="app.getChat([USER_ID],'[USERNICK]');"><span>Envía mensaje</span></div>
+					<div class="on2"></div>
+					<div class="on1"></div>
+					<a href="" data-transition="slide">
+						<div class="gal_top_icons">				
+							<!-- Is Paying -->		
+							<div class="special3 right"></div>
+							<!-- Is New -->							
+							<div class="blue_star right"></div>
+						</div>
+					</a>					
+					<div class="distance_value"><span></span></div>				
+				</div>
+			</div>
+			<!-- END User Data Template -->
+			
+			
+			<!-- START User Profile Buttons Template -->
+			<div id="userProfileButtonsTemplate">
+				<button onclick="app.getChat([USER_ID],'[USERNICK]');" data-theme="a">Envía mensaje</button>	  					
+				<div class="clear"></div>
+				<br />
+			</div>
+			<!-- END User Profile Buttons Template -->
+			
+			
+			<!-- START User Profile Group Template -->
+			<div id="userProfileGroupTemplate">
+				<div class="user_data_group bold">[GROUP_NAME]</div>
+			</div>
+			<!-- END User Profile Group Template -->
+			
+			
+			<!-- START User Profile Line Template -->
+			<div id="userProfileLineTemplate">
+				<div class="user_data_wrap">
+					<div class="user_data bold">[LINE_NAME]</div>
+					<div class="user_data">[LINE_VALUE]</div>
+					<div class="clear"></div>
+					<div class="underline"></div>
+				</div>
+			</div>
+			<!-- END User Profile Line Template -->
+			
+			<!-- START User Profile Line Template 2 -->
+			<div id="userProfileLineTemplate2">
+				<div class="user_data_wrap">					
+					<div class="user_data2">[LINE_VALUE]</div>
+					<div class="underline"></div>
+				</div>
+			</div>
+			<!-- END User Profile Line Template 2-->
+			
+			
+			<!-- START Messenger Template -->
+			<div id="messengerTemplate">
+				<div class="mail_section" onclick="app.getChat([USER_ID],'[USERNICK]');">					
+					<img src="[IMAGE]" />
+					<div class="txt">
+						<strong>[USERNICK]</strong><br />
+						[RECENT_MESSAGE]					
+					</div>										
+					<span>[DATE]</span>					
+					<div class="special2 hidden"></div>
+					<div class="new_mes_count"></div>					 
+				</div>
+			</div>
+			<!-- END Messenger Template -->
+			
+			<!-- START Chat Message Template -->
+			<div id="chatMessageTemplate">
+				<div class="[MESSAGE_TYPE] [MESSAGE_FLOAT]">
+					[MESSAGE]
+				<div class="buySubscr"><button onclick="app.getSubscription();" data-theme="a">Suscripción</button></div></div>
+				[READ]
+				<div class="message_info [INFO]">Enviado: [DATE] time: [TIME]</div>
+			</div>
+			<!-- END Chat Message Template -->
+			
+			<!-- START Images List Template -->
+			<div id="editImageTemplate">				
+				<div class="userImageWrap">
+					<img src="[IMAGE]" width="295" /><br />
+					<span class="imageStatus"></span>
+					<button onclick="app.confirmDeleteImage([IMAGE_ID]);" data-theme="a">Eliminar</button>
+					<br /><br /><br />
+				</div>
+			</div>
+			<!-- END Images List Template -->
+			
+	</div>
+	
+	
+</body>
+</html>
