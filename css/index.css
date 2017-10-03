@@ -3,7 +3,7 @@
 	padding:0px;
 	border:0px;
 	font-family:Arial;
-	direction:ltr;	
+	direction:ltr;
 }
 
 .ui-content{background: #292929;}
@@ -14,9 +14,147 @@ a{
 
 .page{
 	background:#000;
-	position: relative;	
-	padding-top:55px;	
+	position: relative;
+	padding-top:55px;
 }
+
+/* START PAYMENT PAGE */
+#innerPageHolder {
+    background: url(../images/innerPage.png) repeat-x #292929;
+    width: 100%;
+    height: auto;
+    padding-top: 25px;
+}
+
+#massBoxIn {
+    width: 93%;
+    height: auto;
+    margin: 0 auto;
+    min-height: 355px;
+}
+
+#innerPageHolder h2 {
+    height: 24px;
+    background: url(../images/h2Pipe1.png) repeat-x bottom;
+    background-size: auto 2px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #c8c8c9;
+    margin: 0;
+    padding: 0;
+    line-height: 10px;
+    text-shadow: none;
+}
+
+.subs {
+    background: url(../images/pay_bg.png) no-repeat center left;
+    background-size: 100% 100%;
+    width: 97%;
+    height: 65px;
+    padding: 0;
+    margin: 18px auto 26px;
+    position: relative;
+    border: 4px solid #fff;
+    border-radius: 8px;
+}
+
+#paymentPage h2 {
+    color: #fff;
+}
+
+.subs a {
+    display: block;
+    padding-right: 55px;
+    padding-left: 30px;
+    padding-top: 10px;
+    color: black;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: normal;
+    direction: ltr;
+}
+
+.subsTitle {
+    font-size: 15px;
+    color: #bd1f95;
+    font-weight: Bold;
+    line-height: 18px;
+    display: block;
+    padding-bottom: 2px;
+}
+
+.subsPrice {
+    position: absolute;
+    top: 25px;
+    right: 2px;
+    font-size: 17px;
+    color: #b72095;
+    font-weight: bold;
+    line-height: 15px;
+}
+
+.subsPrice span {
+    font-size: 35px;
+    font-weight: normal;
+}
+
+.prec {
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    /* font-weight: bold; */
+    background: url(../images/prec.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    padding: 2px 6px 3px;
+}
+
+.subs:hover .subsBut{
+    background: url(../images/payBut_hover.png);
+}
+
+.subsBut {
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    background: url(../images/payBut.png);
+    width: 36px;
+    height: 36px;
+}
+
+
+.mb_wrap{
+	float: right;
+	width:100px;
+	height:100px;
+	background:url("../images/shrlinBack.png") no-repeat;
+	background-size: contain;
+	/*position: relative;*/
+	text-shadow: none;
+}
+
+
+.mb_wrap:hover{
+	background:url("../images/shrlinActive.png") no-repeat;
+	background-size: 100%;
+}
+
+.mb_wrap .text{
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 13px;
+	margin-top: 75px;
+}
+
+.mb_wrap .text.twoLine{
+    margin-top: 68px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
 
 #header{
 	background: url("../images/header_bg.png") repeat-x;
@@ -30,7 +168,7 @@ a{
 	top:0;
 	right:0;
 	z-index:999;
-	/*position: relative;*/	
+	/*position: relative;*/
 }
 
 #forgot {
@@ -58,14 +196,14 @@ a{
 	background: url("../images/registerB.png") no-repeat center center;
 	background-size:100%;
 	margin-right:1%;
-	/*margin:7px 0 0 0;*/	
+	/*margin:7px 0 0 0;*/
 }
 
 #logo{
 	/*float:left;*/
 	width:139px;
 	height:100%;
-	background: url("../images/logo1.png") no-repeat top center;	
+	background: url("../images/logo1.png") no-repeat top center;
 	position:absolute;
 	top:0;
 	left:50%;
@@ -81,22 +219,22 @@ a{
 
 #main_page .content_wrap{width:296px;}
 
-#download_app_button, #cell_website_button, #regular_website_button{	
+#download_app_button, #cell_website_button, #regular_website_button{
 	width:283px;
 	height:98px;
-	margin-bottom:15px; 
+	margin-bottom:15px;
 }
 
 #download_app_button{
-	background:url("../images/download_app_button.png") no-repeat;	
+	background:url("../images/download_app_button.png") no-repeat;
 }
 
 #cell_website_button{
-	background:url("../images/sellular_website_button.png") no-repeat;	
+	background:url("../images/sellular_website_button.png") no-repeat;
 }
 
 #regular_website_button{
-	background:url("../images/regular_website_button.png") no-repeat;	
+	background:url("../images/regular_website_button.png") no-repeat;
 }
 
 #my_button{
@@ -110,8 +248,8 @@ a{
 	text-shadow:none;
 }
 
-#birthDate div{	
-	margin-right:1px;	
+#birthDate div{
+	margin-right:1px;
 }
 
 .regInput sp{
@@ -121,8 +259,8 @@ a{
 }
 
 #user_txt, #pass_txt, .regTxt{
-	width:75px;	
-	margin-right:10px;	
+	width:90px;
+	margin-right:10px;
 	color:#c8c8c9;
 	font-size:15px;
 	font-weight: bold;
@@ -131,11 +269,11 @@ a{
 }
 
 #authForm #user_txt,#authForm #pass_txt{
-	width:100px;		
+	width:100px;
 }
 
 .lineHeight_50{
-	line-height:50px;	
+	line-height:50px;
 }
 
 .mar_top_8{
@@ -143,7 +281,25 @@ a{
 	margin-top:8px;
 }
 
-#user_input input, #pass_input input, .regInput input{
+#edit_profile_page .save .formButton{
+	margin-left: 25px;
+}
+
+.formButton {
+	background: #b0258a;
+	color: #fff;
+	background-size: 100% 100%;
+	padding: 8px 5px;
+	border-radius: 5px;
+}
+
+#edit_profile_page .edit button.formButton {
+	font-size: 15px;
+	margin-top: 10px;
+	float: left;
+}
+
+#user_input input, #pass_input input, .regInput input, .regInput textarea {
 	width:180px;
 	color:#c8c8c9;
 	font-size:16px;
@@ -152,7 +308,31 @@ a{
 	border:1px solid #d9dbd9;
 	background: #fff;
 	border-top-left-radius: 10px;
-    border-top-right-radius: 10px;	
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    direction: ltr;
+    padding:7px;
+    margin-bottom:15px;
+}
+
+#dynamic_page .content_wrap {
+    color: #fff;
+    text-align: justify;
+    font-family: Arial,
+    font-weight: normal
+}
+
+#contact_us_page textarea {
+    width:100%;
+	color:#c8c8c9;
+	font-size:16px;
+	font-weight: bold;
+	height:100px;
+	border:1px solid #d9dbd9;
+	background: #fff;
+	border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     direction: ltr;
@@ -162,30 +342,91 @@ a{
 
 #authForm #user_input input,#authForm #pass_input input, #form_recovery #user_input input{
 	width:251px;
-	margin-right:16px;	
+	margin-right:16px;
 	font-weight: bold;
 	font-size:17px;
 	color:#000;
 	margin:0 auto 15px;
 }
 
+.regInput textarea {
+	height: 100px;
+}
+
 [placeholder]{
 	color:#c8c8c9;
 	font-size:16px;
-	font-weight: bold;		
+	font-weight: bold;
 }
 
 #user_input input, #pass_input input{
 	border:0px;
-	background: #ececec;	
+	background: #ececec;
+}
+
+
+#friends_online, #search_friends, #profile, #mail_box, #looked_me, #looked_them,  #contacted_them, #favorites, #fav_me, #update_profile, #like_but{
+	float:right;
+	width:100%;
+	height:100%;
+}
+
+.noPicture{
+	width: 33%;
+}
+
+.noPicture img{
+	width:100%;
+	min-height:88px;
+	/*float:left;*/
+	border: 2px solid #fff;
+}
+
+.my-gallery{
+    margin: 0 auto;
+}
+
+#looked_me{
+	background:url("../images/looked_me_button.png") no-repeat 50% 30%;
+	background-size: 80%;
+}
+
+#update_profile{
+	background:url("../images/update_profile_button.png") no-repeat 50% 20%;
+	background-size: 45%;
+}
+
+#like_but{
+	background:url("../images/myPro.png") no-repeat 50% 30%;
+	background-size: 60%;
+}
+
+#contacted_them{
+	background:url("../images/contacted_them_button.png") no-repeat 50% 30%;
+	background-size: 40%;
+}
+
+#favorites{
+	background:url("../images/favorites_button.png") no-repeat 50% 20%;
+	background-size: 40%;
+}
+
+#fav_me{
+	background:url("../images/fav_me_button.png") no-repeat 50% 30%;
+	background-size: 80%;
+}
+
+#looked_them{
+	background:url("../images/looked_them_button.png") no-repeat 50% 30%;
+	background-size: 80%;
 }
 
 /*
 .regInput input{
-	
+
 	background: #eaeaea;
 	border:1px solid #d6d7d6;
-	
+
 }
 */
 .clear{
@@ -195,7 +436,7 @@ a{
 
 
 
-#authForm{	
+#authForm{
 	padding: 70% 0 0;
 }
 
@@ -205,7 +446,7 @@ a{
 	border:0px;
 	color:#707070;
 	font-weight:normal;
-	font-size:13px;	
+	font-size:13px;
 }
 
 #authForm label span{
@@ -213,7 +454,7 @@ a{
 }
 
 #authForm input[type="checkbox"]{
-			
+
 }
 
 #fog_pass{
@@ -222,12 +463,12 @@ a{
 
 #fog_pass a{
 	color: #494949;
-	font-size: 12px;	
+	font-size: 12px;
 	text-decoration:underline;
 }
 
-#fog_pass a:hover{	
-	text-decoration:none;   	
+#fog_pass a:hover{
+	text-decoration:none;
 }
 
 #login{
@@ -235,7 +476,7 @@ a{
 	height:55px;
 	background: url("../images/login_button.png") no-repeat center center;
 	background-size:92%;
-	float:right;	
+	float:right;
 }
 
 #grey_line{
@@ -249,7 +490,7 @@ a{
 .user_data_preview:nth-child(2n+1){margin-right: 3px;}
 .user_data_preview:nth-child(2n+2){margin-right: -5px;}
 
-.user_data_preview{	
+.user_data_preview{
 	background: #222222;
 	float:left;
 	width:148px;
@@ -266,27 +507,27 @@ a{
 	margin: 0 auto 7px;
 }
 
-.user_data_preview .user_photo{	
-	width:128px;	
-	background:#464646;				
+.user_data_preview .user_photo{
+	width:128px;
+	background:#464646;
 }
 
-.user_data_preview a span{	
+.user_data_preview a span{
 	color:#ea006f;
 	font-size:14px;
 	text-decoration:none;
-	
+
 }
 
 .user_data_preview a{
-	text-decoration:none;	
-	margin:0 7px 0 2px;	
+	text-decoration:none;
+	margin:0 7px 0 2px;
 }
 
 .user_data_preview .on{
 	position:absolute;
 	left:10px;
-	bottom:8px;		
+	bottom:8px;
 	color: #c8c8c9;
 	font-size: 10px;
 	width: 30px;
@@ -301,11 +542,11 @@ a{
 	font-size: 13px;
 	color: #c8c8c9;
 	margin-left:2px;
-	margin-right:7px 
+	margin-right:7px
 }
 
 .image_loading{
-	/*background: url("../jquery.mobile/images/ajax-loader.gif") no-repeat;*/ 
+	/*background: url("../jquery.mobile/images/ajax-loader.gif") no-repeat;*/
 	width:46px;
 	height:46px;
 	margin:auto;
@@ -314,42 +555,42 @@ a{
 
 
 #top_left_buttons{
-	
+
 	/*
-	left:17px;	
+	left:17px;
 	z-index: 10;
 	position:absolute;
 	*/
 	min-width:100px;
 	height:100%;
 	float:left;
-	
+
 }
 
-#top_right_buttons{	
-	
+#top_right_buttons{
+
 	/*
 	position:absolute;
-	right:17px;	
+	right:17px;
 	z-index: 10;
-	*/	
-	
+	*/
+
 	height:100%;
 	min-width:100px;
 	float:right;
 }
 
 #right_buttons{
-	float:right;	
+	float:right;
 }
 
 #left_buttons{
-	float:left;	
+	float:left;
 }
 
 
 
-#center_logo{	
+#center_logo{
 	/*
 	z-index: 5;
 	position:absolute;
@@ -363,20 +604,20 @@ a{
 	width:33%;
 	height:50px;
 	background: url("../images/logo.png") no-repeat center center;
-	
-	 
-	
+
+
+
 }
 
 /*
-#center_logo{	
+#center_logo{
 	width:96px;
 	height:49px;
-	background: url("../images/logo.png") no-repeat;	
-	
+	background: url("../images/logo.png") no-repeat;
+
 	position: absolute;
 	top:0px;
-	right:35%; 
+	right:35%;
 }
 */
 
@@ -387,58 +628,56 @@ a{
 	height:100%;
 	background: url("../images/logout_button.png") no-repeat center center;
 	background-size:94%;
-	display:none;		
+	display:none;
+}
+
+#messageToAdmin{
+	height: 150px;
+	width: 100%;
 }
 
 #contact{
-	display:none;		
+	display:none;
 	float:left;
 	width:68px;
 	height:29px;
 	background: url("../images/contact_button.png") no-repeat;
-	margin:11px 0 0 0;		
+	margin:11px 0 0 0;
 }
 
 #main_page .content_wrap{width:300px;}
 
 .mainBut{
-	float:right;
+	float:left;
 	width:148px;
 	height:151px;
-	background:url("../images/shrlinBack.png") no-repeat left center;
-	background-size: auto 95%;
+	background:url("../images/shrlinBack.png") no-repeat;
 }
 
 .mainBut:hover{
-	background-image: url(../images/shrlinActive.png);
-   	background-size: auto 95%;	
-}
-
-#friends_online, #search_friends, #profile, #mail_box{
-	float:left;
-	width:148px;
-	height:151px;	
-}
-
-#friends_online{
-	background:url("../images/onlineFri.png") no-repeat 40% center;
-	background-size: auto 75%;
+	background:url("../images/shrlinActive.png") no-repeat;
 }
 
 #search_friends{
-	background:url("../images/searchRS.png") no-repeat 40% center;
-	background-size: auto 75%;
+	background:url("../images/search_friends_button.png") no-repeat 50% 20%;
+	background-size: 60%;
 }
 
+#friends_online{
+	background:url("../images/friends_online_button.png") no-repeat 50% 20%;
+	background-size: 60%;
+}
+
+
 #profile{
-	background:url("../images/myPro.png") no-repeat 40% center;
-	background-size: auto 75%;	
+	background:url("../images/myPro.png") no-repeat 40% 20%;
+	background-size: auto 75%;
 }
 
 #mail_box{
-	background:url("../images/massBox.png") no-repeat 45% center;
-	background-size: auto 75%;
+	background:url("../images/mail_box_button.png") no-repeat 50% 20%;
 	position:relative;
+	background-size: 60%;
 }
 
 #why_subscr{
@@ -464,7 +703,7 @@ a{
 #why_subscr img{width:100%;}
 
 #new_mes_count{
-	display:none; 
+	display:none;
 	background:url("../images/new_mes_count_bg.png") no-repeat;
 	background-size:100%;
 	position:absolute;
@@ -472,11 +711,11 @@ a{
 	right:0px;
 	z-index:10;
 	width:31px;
-	height:31px;	
-	font-size: 13px;	
+	height:31px;
+	font-size: 13px;
 	color:#fff;
 	text-align: center;
-	line-height: 31px; 
+	line-height: 31px;
 }
 
 .no_dec{
@@ -487,20 +726,22 @@ a{
 	float:left;
 	width:83px;
 	height:100%;
-	background: url("../images/back_button.png") no-repeat center center;	
+	background: url("../images/back_button.png") no-repeat center center;
 	background-size:94%;
-	display:none;	
+	display:none;
+    z-index: 9999;
+    position: relative;
 }
 
 h1{
 	color:#c8c8c9;
 	font-size: 20px;
 	direction:ltr;
-	text-align:left;	
+	text-align:left;
 }
 
 h1 span{
-	color:#ee007b;  
+	color:#ee007b;
 }
 
 
@@ -530,13 +771,13 @@ h1 span{
 	background: url("../images/v_dots.png") repeat-x;
 	margin:11px 0 11px 0;
 	width:100%;
-	height:2px;	
+	height:2px;
 }
 
 #search_form{
 	color:#c8c8c9;
 	font-size:18px;
-	font-weight:bold;	
+	font-weight:bold;
 }
 
 .sf_txt{
@@ -544,29 +785,29 @@ h1 span{
 	float:left;
 	width:30%;
 	line-height:55px;
-	text-align:left;	
+	text-align:left;
 }
 
 .sf_txt2{
 	color:#c8c8c9;
 	float:right;
-	line-height:55px;	
+	line-height:55px;
 	width:10%;
-	text-align:center;  
+	text-align:center;
 }
 
 .sf_sel_wrap{
-	float:left;
+	float:right;
 	width:70%;
 	text-align:left;
 }
 
 .sf_sel{
-	width:100%;	
+	width:100%;
 }
 
 .left{
-	float:left; 	
+	float:left;
 }
 
 .sf_sel_wrap2{
@@ -596,7 +837,7 @@ h1 span{
 	border:0px;
 	position: fixed;
 	bottom:0px;
-	display:none;				
+	display:none;
 }
 
 
@@ -604,7 +845,7 @@ h1 span{
 	float:right;
 	width:320px;
 	height:97px;
-	background:#292929;  
+	background:#292929;
 }
 
 .res_btn{
@@ -617,12 +858,12 @@ h1 span{
 	background:url("../images/distance_button.png") no-repeat;
 }
 
-#online{	
-	background:url("../images/online_button.png") no-repeat;	
+#online{
+	background:url("../images/online_button.png") no-repeat;
 }
 
 #gallery{
-	background:url("../images/gallery_button.png") no-repeat;	
+	background:url("../images/gallery_button.png") no-repeat;
 }
 
 .right{
@@ -651,8 +892,8 @@ h1 span{
 .user_pic{
 	width:100%;
 	height:100%;
-	background:#575757;	
-	background-size:100%;	
+	background:#575757;
+	background-size:100%;
 }
 
 .send_mes{
@@ -662,7 +903,7 @@ h1 span{
 	background-size:100%;
 	position: absolute;
 	right:0px;
-	top:0px;	
+	top:0px;
 }
 
 .send_mes span{
@@ -683,7 +924,7 @@ h1 span{
 	right:64px;
 	top:5px;*/
 	height:90px;
-	/*width:44%;*/	
+	/*width:44%;*/
 	color:#434343;
 	font-size:11px;
 	overflow:hidden;
@@ -692,7 +933,7 @@ h1 span{
 	/*margin-left:104px;*/
 	margin:5px 60px 5px 104px;
 	text-align:left;
-	
+
 	/*
 	margin-right:70px;
 	margin-left:100px;
@@ -710,11 +951,11 @@ h1 span{
 	color:#000;
 }
 
-.user_short_txt span{	
+.user_short_txt span{
 	color:#909090;
 }
 
-.user_short_txt strong span{	
+.user_short_txt strong span{
 	color:#ea077b;
 }
 
@@ -731,14 +972,14 @@ h1 span{
 
 .on1{background:url("../images/offline_icon2.png") no-repeat;background-size:100%;}
 
-.special{	
+.special{
 	width:44px;
 	height:64px;
 	background:url("../images/special_icon.png") no-repeat;
 	background-size:100%;
 	position: absolute;
 	left:69px;
-	top:-8px;	
+	top:-8px;
 }
 
 .distance_value{
@@ -748,13 +989,13 @@ h1 span{
 	position: absolute;
 	left:21px;
 	bottom:5px;
-	text-align: center;	
+	text-align: center;
 	font-size: 14px;
 	font-weight: bold;
 	line-height:20px;
 	opacity:0.9;
 	border-radius: 10px 10px 0 0;
-	
+
 }
 
 .distance_value span{
@@ -775,9 +1016,9 @@ a .mail_section{
 	clear:both;
 }
 
-.mail_section .txt{	
+.mail_section .txt{
 	height:60px;
-	float:left;	
+	float:left;
 	color:#949494;
 	font-size:12px;
 	margin:7px 7px 7px 65px;
@@ -786,22 +1027,31 @@ a .mail_section{
 	overflow: hidden;
 }
 
+.mail_section .txt img{
+    display:inline-block;
+    position: relative;
+    top:auto;
+    left:auto;
+    width:18px;
+    height: 18px;
+}
+
 .mail_section a div{
 	font-weight:normal;
 }
 
-.mail_section img{	
+.mail_section img.user-img-inbox{
 	width:55px;
 	height:55px;
 	border:1px solid #a4a4a4;
-	background:#575757;	
+	background:#575757;
 	position: absolute;
 	top:5px;
-	left:5px;	
+	left:5px;
 }
 
 .mail_section strong{
-	font-size:13px;	 
+	font-size:13px;
 }
 
 .mail_section span{
@@ -809,7 +1059,7 @@ a .mail_section{
 	top:7px;
 	right:10px;
 	color:#cacaca;
-	font-size: 12px;	
+	font-size: 12px;
 }
 
 .new_mes_count{
@@ -820,8 +1070,8 @@ a .mail_section{
 	left:-5px;
 	z-index:10;
 	width:28px;
-	height:28px;	
-	font-size: 13px;	
+	height:28px;
+	font-size: 13px;
 	color:#fff;
 	text-align: center;
 	line-height: 27px;
@@ -835,8 +1085,8 @@ a .mail_section{
 	right:16px;
 	z-index:30;
 	width:27px;
-	height:26px;	
-	font-size: 12px;	
+	height:26px;
+	font-size: 12px;
 	color:#fff;
 	text-align: center;
 	line-height: 26px;
@@ -870,27 +1120,27 @@ a .mail_section{
     right: 10px;
 	z-index:20;
 	/*bottom:-15px;*/
-	/*text-shadow: 1px 1px #531133; 
-	
-	border-radius: 8px; 
-	-moz-border-radius: 8px; 
+	/*text-shadow: 1px 1px #531133;
+
+	border-radius: 8px;
+	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	border: 2px solid #fff;
 	background:#e40f7d;
 	box-shadow: 4px 4px 7px #db5d94;
-	
+
 	opacity:0.9;*/
-	
-	
-	
+
+
+
 	display:none;
-	
+
 	font-size:11px;
 	color:#fff;
 	font-weight: bold;
 	/*padding-left:10px;*/
 	text-align: center;
-	
+
 }
 
 .text_mes {
@@ -905,13 +1155,13 @@ a .mail_section{
 
 
 
-.special2{	
+.special2{
 	width:30px;
 	height:44px;
 	background:url("../images/icoKing.png") no-repeat;
 	position: absolute;
 	right:-12px;
-	top:-9px;		
+	top:-9px;
 }
 
 .gallery_section{
@@ -920,7 +1170,7 @@ a .mail_section{
 	background: #fff;
 	position:relative;
 	float:left;
-	margin:0 8px 8px 0;	
+	margin:0 8px 8px 0;
 }
 
 .gallery_section img{
@@ -935,7 +1185,7 @@ a .mail_section{
 	height:21px;
 	background: #fff;
 	position: absolute;
-	bottom:2px;	
+	bottom:2px;
 	text-align:center;
 	z-index:10;
 	font-weight: bold;
@@ -965,17 +1215,17 @@ a .mail_section{
 	margin-left:-2px;
 }
 
-.special3{	
+.special3{
 	width:26px;
 	height:26px;
 	background:url("../images/special_icon2.png") no-repeat;
 	background-size:100%;
 	display:none;
-	margin-right: -5px; 		
+	margin-right: -5px;
 	margin-top: -5px;
 }
 
-.special4{	
+.special4{
 	width:26px;
 	height:26px;
 	background:url("../images/special_icon2.png") no-repeat;
@@ -983,34 +1233,34 @@ a .mail_section{
 	position:absolute;
 	top:-16px;
 	right:-18px;
-	display:none;		
+	display:none;
 }
 
 .gal_top_icons{
 	position: absolute;
 	right:0;
-	top:-5px;	
+	top:-5px;
 }
 
-.blue_star{	
+.blue_star{
 	width:23px;
 	height:22px;
 	background:url("../images/icoStar.png") no-repeat;
 	background-size:100%;
-	display:none;	
+	display:none;
 }
 
-.yellow_star{	
+.yellow_star{
 	width:23px;
 	height:22px;
-	background:url("../images/yellow_star.png") no-repeat;		
+	background:url("../images/yellow_star.png") no-repeat;
 }
 
 .message_in, .message_out{
 	border-top-left-radius: 10px;
-    border-top-right-radius: 10px;	
+    border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;    
+    border-bottom-right-radius: 10px;
     width:75%;
     line-height:1.5em;
     margin-bottom: 5px;
@@ -1019,30 +1269,30 @@ a .mail_section{
 	-webkit-box-shadow: 2px 2px 3px #c4c0b4;
 	box-shadow: 2px 2px 3px #c4c0b4;
 	font-size: 13px;
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	border-top:1px solid #fff;	
+	border-top:1px solid #fff;
 	direction:ltr;
-	text-align:left;	
+	text-align:left;
 }
 
-.message_in{	
+.message_in{
 	background-image: url("../images/mes_in_bg.png");
-	background-color:#fb8fcb;	
+	background-color:#fb8fcb;
 }
 
 .message_out{
 	background-image: url("../images/mes_out_bg.png");
-	background-color:#e0e1e2;	
+	background-color:#e0e1e2;
 }
 
 .message_info{
 	width:70%;
 	font-size: 11px;
-	color: #818181;	
+	color: #818181;
 	clear:both;
-	margin-bottom:20px; 
-	direction:ltr;	
+	margin-bottom:20px;
+	direction:ltr;
 }
 
 .info_right{
@@ -1064,9 +1314,9 @@ a .mail_section{
 }
 
 #my_info{
-	width:100%;	
+	width:100%;
 	background: #fff;
-	position: relative;		
+	position: relative;
 }
 
 #my_info .user_pic{
@@ -1075,7 +1325,7 @@ a .mail_section{
 	float:left;
 	/*background: url("../images/no_photo_female.jpg") no-repeat bottom center;*/
 	border: 2px solid #ccc;
-	position: relative;		
+	position: relative;
 }
 
 #my_info .user_pic img{
@@ -1084,11 +1334,11 @@ a .mail_section{
 }
 
 .male{
-	background: url("../images/no_photo_male.jpg") no-repeat bottom center;	
+	background: url("../images/no_photo_male.jpg") no-repeat bottom center;
 }
 
 .female{
-	background: url("../images/no_photo_female.jpg") no-repeat bottom center;	
+	background: url("../images/no_photo_female.jpg") no-repeat bottom center;
 }
 
 #my_info .pic_wrap{
@@ -1099,41 +1349,41 @@ a .mail_section{
 
 #my_info .pic_wrap img{
 	width:100%;
-	height:100%;	
+	height:100%;
 }
 
 #my_info .txt{
 	position:absolute;
 	top:0;
-	left:95px;	
-	height:85px;		
+	left:95px;
+	height:85px;
 	color:#434343;
 	font-size:12px;
-	/*margin:7px 60px 7px 7px;*/	
+	/*margin:7px 60px 7px 7px;*/
 	overflow: hidden;
 	text-align:left;
 	direction:ltr;
 }
 
-#my_info .txt span{	
+#my_info .txt span{
 	color:#909090;
 }
 
-#my_info .txt strong span{	
+#my_info .txt strong span{
 	color:#ea077b;
 }
 
 #my_buttons{
-	clear:both;	
+	clear:both;
 	width:100%;
 }
 
 #my_buttons .but_wrap{
 	float:left;
 	width:48%;
-	height:52px;	
-	margin-top:20px;	    	
-}  
+	height:52px;
+	margin-top:20px;
+}
 
 #my_buttons .but_wrap div{
 	width:132px;
@@ -1141,19 +1391,19 @@ a .mail_section{
 	cursor:pointer;
 }
 
-#manage_account{	
+#manage_account{
 	/*background: url("../images/manage_accaunt_button.png") no-repeat left;*/
-	/*background: url("../images/stat_button.png") no-repeat left;*/	
+	/*background: url("../images/stat_button.png") no-repeat left;*/
 }
-
-#update_profile{	
+/*
+#update_profile{
 	background: url("../images/update_profile_button.png") no-repeat center;
 	margin:0 auto 0 auto;
 }
-
+*/
 #upload_image{
 	/*background: url("../images/upload_image_button.png") no-repeat right;*/
-	/*background: url("../images/upload_image_button2.png") no-repeat right;*/	
+	/*background: url("../images/upload_image_button2.png") no-repeat right;*/
 	/*float:right;*/
 }
 
@@ -1161,13 +1411,13 @@ a .mail_section{
 	clear:both;
 	width:100%;
 	height:12px;
-	background: #c1c1c1;	
+	background: #c1c1c1;
 }
 
 .grey_line2{
 	clear:both;
 	width:100%;
-	height:12px;	
+	height:12px;
 	background:#c7bcc7;
 }
 
@@ -1184,17 +1434,17 @@ a .mail_section{
 
 #statistics{
 	background:#292929;
-	/*height:210px;*/			
+	/*height:210px;*/
 }
 
 .stat_side{
 	width:50%;
-	/*height:220px;*/	
-	float:left;	
+	/*height:220px;*/
+	float:left;
 }
 
 .stat_side .items_wrap{
-	width:100%;	
+	width:100%;
 	height:55px;
 	position: relative;
 	/*clear:both;*/
@@ -1207,7 +1457,7 @@ a .mail_section{
 	margin-right:48px;
 	color:#c8c8c9;
 	font-size:12px;
-	font-weight:bold;	
+	font-weight:bold;
 	text-shadow:0 1px 0 #fff;
 	direction:ltr;
 	text-align:left;
@@ -1217,14 +1467,14 @@ a .mail_section{
 	top:-5px;
 }
 
-.stat_side .items_wrap .stat_value{	
+.stat_side .items_wrap .stat_value{
 	position: absolute;
 	top:0px;
 	right:2px;
 	background: url("../images/statistics_bg.png") no-repeat;
 	background-size:100%;
 	width:46px;
-	height:29px;	
+	height:29px;
 	color:#fff;
 	font-size:12px;
 	font-weight:bold;
@@ -1236,24 +1486,24 @@ a .mail_section{
 	background:#f7eed8;
 }
 
-.grey_line_wrap{	
-	background: url("../images/upload_photo_top_bg.png") repeat-x;	
+.grey_line_wrap{
+	background: url("../images/upload_photo_top_bg.png") repeat-x;
 	width:100%;
-	height:15px; 
+	height:15px;
 }
 
 
 .grey_line{
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	background-image: url("../images/upload_photo_top_bg_wide.png");	
+	background-image: url("../images/upload_photo_top_bg_wide.png");
 	width:100%;
-	height:15px;	 
+	height:15px;
 }
 
 .up_buttons{
-	height:63px;	
-	margin: 0px 0px 5px -5px;    	
+	height:63px;
+	margin: 0px 0px 5px -5px;
 }
 
 .take_a_photo{
@@ -1279,33 +1529,33 @@ a .mail_section{
 }
 
 .bg_light_green{
-	background:#fbfdef; 
+	background:#fbfdef;
 }
 
 
 
 
 #user_pictures{
-	clear:both;	
+	clear:both;
 	width:100%;
 }
 
 #user_pictures .pic_wrap{
 	float:left;
-	width:33%;	
-	min-height:88px;	
+	width:33%;
+	min-height:88px;
 	margin-top:20px;
-	position: relative;		
-	/*border:1px solid #ccc;*/	    	
+	position: relative;
+	/*border:1px solid #ccc;*/
 }
 
 #user_pictures .pic_wrap_center{
-	width:33%;	
-	min-height:88px;	
+	width:33%;
+	min-height:88px;
 	margin-top:20px;
 	position: relative;
-	margin:20px auto 0px auto;		    
-	/*border:1px solid #ccc;*/    	
+	margin:20px auto 0px auto;
+	/*border:1px solid #ccc;*/
 }
 
 .center{
@@ -1316,14 +1566,14 @@ a .mail_section{
 #user_pictures .pic_wrap img, #user_pictures .pic_wrap_center img{
 	width:90%;
 	float:left;
-	/*height:84px;*/	
+	/*height:84px;*/
 	/*cursor:pointer;*/
 	border: 2px solid #fff;
-	background: #ccc; 
+	background: #ccc;
 }
 
 #pic1{
-	
+
 }
 
 #pic2{
@@ -1337,21 +1587,21 @@ a .mail_section{
 
 .user_prof_buttons{
 	/*width:47%;*/
-	width:99%;	
+	width:99%;
 	height:48px;
-	border:3px solid #fff;	
-	
+	border:3px solid #fff;
+
 	color:#fff;
-	font-size: 16px;	
+	font-size: 16px;
 	font-weight:bold;
 	line-height:3em;
-	text-align:center;	
+	text-align:center;
     margin: 15px 0px 15px 0px;
-        
+
 	border-top-left-radius: 10px;
-    border-top-right-radius: 10px;	
+    border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;	
+    border-bottom-right-radius: 10px;
 }
 
 #add_to_fav{
@@ -1363,30 +1613,30 @@ a .mail_section{
 	/*background: #3f3f3f;*/
 	background: #f88f22;
 	float:right;
-	
+
 }
 
 .user_data_group, .user_data_wrap .user_data{
 	color:#fff;
 	text-shadow:2px 2px #151515;
 	font-size:14px;
-	line-height: 100%;	
+	line-height: 100%;
 	padding:7px;
 	text-align:left;
 }
 
-.user_data_group{	
+.user_data_group{
 	background:#5f5e5e;
 }
 
 .user_data_wrap .user_data{
 	width:45%;
-	height:100%;	
+	height:100%;
 	float:left;
 	background: none;
-	margin: auto 0px auto 0px;	
-	text-align:left; 
-	/*display:table-cell;vertical-align: middle;*/  	
+	margin: auto 0px auto 0px;
+	text-align:left;
+	/*display:table-cell;vertical-align: middle;*/
 }
 
 .user_data_wrap .user_data2{
@@ -1401,10 +1651,10 @@ a .mail_section{
 }
 
 .user_data_wrap{
-	width:100%;	
+	width:100%;
 	/*background: #f7eed8;*/
 	height:auto;
-	/*display:table;*/	 
+	/*display:table;*/
 }
 
 .bold{
@@ -1415,13 +1665,13 @@ a .mail_section{
 	border-bottom: 1px dotted #bebdbd;
 	width:100%;
 	clear:both;
-	height:1px;	  
+	height:1px;
 }
 
 .on4{
 	width:54px;
 	height:25px;
-	background:url("../images/online_icon3.png") no-repeat center;   
+	background:url("../images/online_icon3.png") no-repeat center;
 	float:right;
 }
 
@@ -1430,7 +1680,7 @@ a .mail_section{
 	height:100%;
 	background: url("../images/welcome.jpg") no-repeat;
 	background-size: 100% 100%;
-			
+
 }
 
 .filler{
@@ -1443,7 +1693,7 @@ a .mail_section{
 .error{
 	margin:0 0 10px 0;
 	color:red;
-	text-align:center;	
+	text-align:center;
 	background:#FFBD87;
 	border-bottom: 1px solid #FFA154;
 	padding:10px 5px 10px 5px;
@@ -1466,12 +1716,12 @@ a .mail_section{
 	padding:10px;
 	margin-bottom:20px;
 	border-top-left-radius: 10px;
-    border-top-right-radius: 10px;	
+    border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     -moz-box-shadow: 2px 2px 3px #E8D1B3;
 	-webkit-box-shadow: 2px 2px 3px #E8D1B3;
-	box-shadow: 2px 2px 3px #E8D1B3;    
+	box-shadow: 2px 2px 3px #E8D1B3;
 }
 
 .subscr{
@@ -1481,11 +1731,11 @@ a .mail_section{
 	border:0px solid #F0ECE1;
 	margin:15px 0 15px 0;
 	background:#fff;
-	font-size:15px;	
+	font-size:15px;
 	border-top-left-radius: 10px;
-    border-top-right-radius: 10px;	
+    border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;    
+    border-bottom-right-radius: 10px;
     -moz-box-shadow: 2px 2px 3px #E8D1B3;
 	-webkit-box-shadow: 2px 2px 3px #E8D1B3;
 	box-shadow: 2px 2px 3px #E8D1B3;
@@ -1494,11 +1744,11 @@ a .mail_section{
 .subscr_left{
 	position:absolute;
 	left:0px;
-	top:0px;	
+	top:0px;
 	width:60px;
-	height:100%;	
+	height:100%;
 	background:#FFE9AB;
-	border-top-left-radius: 10px;    	
+	border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
@@ -1512,7 +1762,7 @@ a .mail_section{
 }
 
 .subscr_center{
-	padding:10px;	
+	padding:10px;
 	position:absolute;
 	left:70px;
 	top:0px;
@@ -1523,30 +1773,30 @@ a .mail_section{
 .subscr_right{
 	position:absolute;
 	right:20px;
-	top:35px;	
+	top:35px;
 	width:40px;
 	font-weight:bold;
-	color:#ff4200;	
+	color:#ff4200;
 }
 
 .subscrLink{
-	
+
 }
 
 .regInfo{
-	font-weight: bold;	
+	font-weight: bold;
 	margin-bottom:10px;
 	color:#c8c8c9;
 	padding-top:10px;
 }
 
 
-#login_page, 
-#my_profile_page, 
+#login_page,
+#my_profile_page,
 #search_form_page,
-#uploadDiv, 
-#main_page, 
-#test1_page, 
+#uploadDiv,
+#main_page,
+#test1_page,
 #test2_page,
 #user_profile_page,
 #messenger_page,
@@ -1556,21 +1806,27 @@ a .mail_section{
 #upload_image_page,
 #get_stat_div,
 #regions_list,
-#register_page,  
+#register_page,
 .pic_wrap,
 .appTemplates,
-.new_mes_count, 
+.new_mes_count,
 .distance_value,
 .buySubscr,
 #sortByDistance,
 #sortByEntranceTime,
 #recovery_page,
-.cityInp{
-	display:none;   
+.cityInp,
+#contact_us_page,
+#report_abuse_page{
+	display:none;
 }
 
 #userEmail, .email, .password, #userPass, #userPass2{
 	direction: ltr;
+}
+
+#radio-male, #radio-female {
+    display: none;
 }
 
 /*
@@ -1600,7 +1856,7 @@ a .mail_section{
 .user_data_wrap .user_data{width:52.9%;min-height:15px;}
 .user_data_wrap .user_data.bold{width:37%}
 #main_page .ui-content {padding: 15px 0;}
-#user_profile_page .content_wrap, #messenger_page .content_wrap, 
+#user_profile_page .content_wrap, #messenger_page .content_wrap,
 #search_form_page .content_wrap,#chat_page .content_wrap,
 #users_list_page .content_wrap{width:100%;padding-right:1%;}
 .bg_user_pre .content_wrap{margin-right:auto;width:295px;margin-left:auto;}
@@ -1649,7 +1905,7 @@ a .mail_section{
 }
 
 .double_checked{
-	background: url(../images/double_check.png) no-repeat center center;	
+	background: url(../images/double_check.png) no-repeat center center;
 }
 
 .read_mess{
@@ -1658,6 +1914,76 @@ a .mail_section{
 	height:23px;
 }
 
+
+#do_likes_page{
+	display:none;
+}
+
+#do_likes_page{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin-top: 50px;
+    background: #000;
+}
+
+#do_likes_page .toolbar{
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	width: 100%;
+	height: 100px;
+	background: #bcbcbc;
+	z-index: 9999999999;
+}
+
+#do_likes_page .toolbar .box{
+	float: left;
+	width: 33%;
+	height: 100px;
+}
+
+#do_likes_page .toolbar .box .icon{
+	width: 65px;
+	height: 100%;
+	margin: 0px auto 0px auto;
+}
+
+
+#do_likes_page .toolbar .box .icon.like{
+	background: url('../images/swiper/like.png') no-repeat center center;
+}
+
+#do_likes_page .toolbar .box .icon.chat{
+	background: url('../images/swiper/mess.png') no-repeat center center;
+}
+
+#do_likes_page .toolbar .box .icon.unlike{
+	background: url('../images/swiper/unlike.png') no-repeat center center;
+}
+
+#do_likes_page .icon.close{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	background: url('../images/swiper/icon_cancel.png') no-repeat;
+	background-size: 100%;
+	width: 32px;
+	height: 32px;
+	z-index: 9999999999;
+}
+
+#do_likes_page .nickname{
+	position: absolute;
+    right: 0px;
+    top: -5px;
+	margin: 15px;
+	padding: 5px 10px 5px 10px;
+	color: #fff;
+	background: #bcbcbc url('../images/swiper/bg_trasparent.png');
+	z-index: 9999999999;
+
+}
 
 
 
@@ -1672,16 +1998,16 @@ a .mail_section{
 	.ui-controlgroup, fieldset.ui-controlgroup, .ui-select{margin:0;padding:0}
 	.mar_top_8{margin-top:0;}
 	#birth_wrap, #country_wrap, #regions_wrap, #city_wrap, .mar_top_13{margin-top:13px;}
-	.regInput sp{line-height:90px;} 
+	.regInput sp{line-height:90px;}
 	#user_input input, #pass_input input, .regInput input,.sf_sel_wrap input{width:100%;font-size:30px;height:55px;}
 	#authForm #user_input input,#authForm #pass_input input{width:510px;height:70px;font-size:30px;}
 	[placeholder]{font-size:30px;}
 	#login{width:300px;height:100px;margin-right:20px;}
-	#user_txt, #pass_txt, .regTxt, .sf_txt{width:25%;font-size:30px;}	
+	#user_txt, #pass_txt, .regTxt, .sf_txt{width:25%;font-size:30px;}
 	.ui-btn-inner, .ui-radio .ui-btn-inner,.ui-checkbox .ui-btn-inner{font-size: 30px;}
 	h1{font-size: 40px;}
 	#main_page .content_wrap{width:600px;}
-	#friends_online, #search_friends, #profile, #mail_box, .mainBut{width:296px;height:302px;}
+	#friends_online, #profile, #mail_box, .mainBut{width:296px;height:302px;}
 	#why_subscr{width:580px;margin:40px 0 0 0;}
 	#main_page .ui-content {padding: 30px 0;}
 	.sf_txt2{font-size:28px;line-height:90px;}
@@ -1709,16 +2035,26 @@ a .mail_section{
 	.message_in, .message_out{font-size: 25px;}
 	.message_info{font-size: 20px;}
 	.mail_section{height:110px;margin-bottom:10px}
-	.mail_section .txt{	
+	.mail_section img.user-img-inbox{
+    		width:94px;
+    		height:94px;
+    		border:3px solid #a4a4a4;
+    		top:5px;
+    		left:5px;}
+	.mail_section .txt{
 		height:94px;
 		font-size:18px;
 		margin:8px 8px 8px 110px;}
-	.mail_section img{	
-		width:94px;
-		height:94px;
-		border:3px solid #a4a4a4;
-		top:5px;
-		left:5px;}
+
+	.mail_section .txt img{
+	    display:inline-block;
+	    position: relative;
+	    top:auto;
+	    left:auto;
+	    width:18px;
+	    height: 18px;
+	}
+
 	.mail_section strong{font-size:20px; }
 	.mail_section span{font-size:18px;}
 	.new_mes_count{	width:41px;	height:41px;font-size: 19px;line-height: 33px;}
